@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="">
+	<input type="text" name="valicode"><img id="valicodeimg" alt="" src="http://localhost:8080/JspDay10/valicode">看不清<a href="javascript:void(0)" onclick="changeValiCode()">换一张</a>
+		<input type="submit" value="提交">
+	</form>
+	<script type="text/javascript">
+		function changeValiCode(){
+			var imgNode=document.getElementById("valicodeimg");
+			imgNode.src="http://localhost:8080/JspDay10/valicode?time="+new Date().getTime();
+		}
+	</script>
+</body>
+</html>

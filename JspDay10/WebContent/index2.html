@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        .hide
+        {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <input type="file" name="file0" id="file0"/>
+    <br><br><img src="" id="img0" width="120" class="hide">
+</form>
+<script>
+    $("#file0").change(function(){
+        var objUrl = getObjectURL(this.files[0]) ;
+        console.log("objUrl = "+objUrl) ;
+        if (objUrl) 
+        {
+            $("#img0").attr("src", objUrl);
+            $("#img0").removeClass("hide");
+        }
+    }) ;
+    function getObjectURL(file) 
+    {
+        var url = null ;
+        if (window.createObjectURL!=undefined) 
+        { // basic
+            url = window.createObjectURL(file) ;
+        }
+        else if (window.URL!=undefined) 
+        {
+            // mozilla(firefox)
+            url = window.URL.createObjectURL(file) ;
+        } 
+        else if (window.webkitURL!=undefined) {
+            // webkit or chrome
+            url = window.webkitURL.createObjectURL(file) ;
+        }
+        return url ;
+    }
+</script>
+	
+</body>
+</html>

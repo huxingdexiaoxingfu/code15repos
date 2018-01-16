@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+	如果要做文件上载，form标签元素的enctype即编码类型要设置为multipart/form-data
+ -->
+<form action="secondupload" method="post" enctype="multipart/form-data">
+	<input type="text" name="username"><br><br>
+	<input type="file" name="aFile"><br><br>
+	<input type="file" name="bFile"><br><br>
+	<input type="file" name="cFile"><br><br>
+	<input type="submit" value="开始上传">
+</form>
+
+
+<form action="aaa" method="post">
+	<input type="text" name="username"><br><br><input type="submit" value="提交">
+</form>
+</body>
+</html>
